@@ -1,0 +1,40 @@
+<%-  include ('layouts/header.ejs') %>
+  <body>
+  
+      <div class="container"> 
+        <h1>
+            <%= title %>
+        </h1>
+        </br></br>
+        <table class="table table-striped table-dark">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">CAR ID</th>
+                <th scope="col">Region ID</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Action</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <% driver.forEach(function(driver){ %>
+              <tr>
+                <th scope="row"><%= driver.driver_id %></th>
+                <td><%= driver.car_id %></td>
+                <td><%= driver.reg_id %></td>
+                <td><%= driver.f_name %></td>
+                <td><%= driver.l_name %></td>
+                <td>
+                  <a href="/user_view_driver/<%= driver.driver_id %>/<%= customer.cus_id %>" class="btn btn-success">VIEW</a>
+                </td>
+              </tr>
+              <% }); %>
+            </tbody>
+          </table>
+      </div>
+
+    </body>
+    </html>
+<%- include('layouts/footer.ejs') %>

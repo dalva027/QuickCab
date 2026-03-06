@@ -1,0 +1,42 @@
+<%-  include ('layouts/header.ejs') %>
+
+<div class="card text-center" style="margin: auto;
+justify-content: center; margin-top: 10%; width: 35%;">
+  <div class="card-body">
+
+    <div class="input-group">
+        <input class="form-control font-weight-bold" style="text-align: center;" type="text"  value="Driver Details" readonly>
+    </div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text font-weight-bold" >First and last name</span>
+      </div>
+      <input readonly type="text" aria-label="First name" class="form-control" value="<%= driver.f_name %>" name="f_name" >
+      <input readonly type="text" aria-label="Last name" class="form-control" value="<%= driver.l_name %>" name="l_name"> 
+    </div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text font-weight-bold" id="inputGroup-sizing-default">Driver Car</span>
+      </div>
+      <input readonly type="text" style="text-align: center;" class="form-control" value="<%= driver.car_id %>" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text font-weight-bold" id="inputGroup-sizing-default">Region</span>
+      </div>
+      <input readonly type="text" style="text-align: center;" class="form-control" value="<%= driver.reg_id %>" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+  </br>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <a href="/confirm/<%= driver.reg_id %>/<%= driver.driver_id %>/<%= customer.cus_id %>" class="btn btn-success">GO!</a>
+      </div>
+      <div class="input-group-prepend" style="right: 0px; position: absolute;">
+        <a onclick="history.back();" class="btn btn-success">Select Another</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%- include('layouts/footer.ejs') %>

@@ -1,0 +1,28 @@
+<%-  include ('layouts/header.ejs') %>
+<div class="container">
+    <h2><%= title %></h2>
+    <form action="/update" method="post">
+       <div class="form-group">
+        <label for="driver_id">Driver ID:</label>
+        <input type="text" class="form-control" id="driver_id" value="<%= driver.driver_id %>" name="driver_id" required>
+      </div>
+      <div class="form-group">
+        <label for="car_id">Car ID:</label>
+        <input type="car_id" class="form-control" id="car_id" value="<%= driver.car_id %>" name="car_id" required>
+      </div>
+      <div class="form-group">
+        <label for="reg_id">Region ID:</label>
+        <input type="text" class="form-control" id="reg_id" value="<%= driver.reg_id %>" name="reg_id" required>
+      </div>
+      <div class="form-group">
+        <label for="f_name">First Name:</label>
+        <input type="text" class="form-control" id="f_name" value="<%= driver.f_name %>" name="f_name" required>
+      </div>
+      <div class="form-group">
+        <label for="l_name">Last Name:</label>
+        <input type="text" class="form-control" id="l_name" value="<%= driver.l_name %>"  name="l_name" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+<%- include('layouts/footer.ejs') %>

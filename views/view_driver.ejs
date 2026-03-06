@@ -1,0 +1,29 @@
+<%-  include ('layouts/header.ejs') %>
+
+<div class="container"><h2><%= title %></h2>
+<div style="display: flex;
+justify-content: center;
+align-items: center; margin-top:10%;">
+<div class="card border-dark mb-3" style="width: 34rem;">
+    <div class="card-body">
+      <h5 class="card-title"><%= driver.f_name %> <%= driver.l_name %></h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">ID: <%= driver.driver_id %></li>
+      <li class="list-group-item">REGION: <%= driver.reg_id %></li>
+      <li class="list-group-item">CAR: <%= driver.car_id %></li>
+    </ul>
+    <div class="card-body">
+        <a onclick="history.back();" class="btn btn-success">Select Another</a>
+        <a href="/edit_driver/<%= driver.driver_id %>" class="btn btn-success">EDIT</a>
+        <a href="/delete_driver/<%= driver.driver_id %>" class="btn btn-danger" onclick="showalert()">DELETE</a>    
+    </div>
+  </div>
+ </div>
+</div>
+<script>
+    function showAlert() {
+      alert (`User ${driver.driver_id} has been deleted`);
+    }
+</script>
+<%- include('layouts/footer.ejs') %>

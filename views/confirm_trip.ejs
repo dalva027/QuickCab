@@ -1,0 +1,86 @@
+<%-  include ('layouts/header.ejs') %>
+
+
+<form action="/submit_trip" method="post">
+<div class="card text-center" style="margin: auto;
+justify-content: center; margin-top: 10%; width: 35%;">
+  <div class="card-body">
+
+    <div class="input-group">
+        <input class="form-control font-weight-bold" style="text-align: center;" type="text"  value="Invoice Details" readonly>
+    </div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text font-weight-bold" >Customer First and last name</span>
+      </div>
+      <input readonly type="text" aria-label="First name" class="form-control" value="<%= invoice.cus_fname %>" name="cus_fname" >
+      <input readonly type="text" aria-label="Last name" class="form-control" value="<%= invoice.cus_lname %>" name="cus_lname"> 
+    </div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text font-weight-bold" id="inputGroup-sizing-default">Trip ID</span>
+      </div>
+      <input readonly type="text" style="text-align: right;" class="form-control" name="trip_id" value="<%= invoice.trip_id %>" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text font-weight-bold" id="inputGroup-sizing-default">Driver ID</span>
+      </div>
+      <input readonly type="text" style="text-align: right;" class="form-control" name="driver_id" value="<%= invoice.driver_id %>" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text font-weight-bold" id="inputGroup-sizing-default">Customer ID</span>
+        </div>
+        <input readonly type="text" style="text-align: right;"class="form-control" name="cus_id" value="<%= invoice.cus_id %>" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text font-weight-bold" id="inputGroup-sizing-default">Region</span>
+      </div>
+      <input readonly type="text" style="text-align: right;" class="form-control" name="reg_id" value="<%= invoice.reg_id %>" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text font-weight-bold" id="inputGroup-sizing-default">Trip Miles</span>
+        </div>
+        <input readonly type="text" style="text-align: right;"class="form-control" name="trip_miles" value="<%= invoice.trip_miles %>" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text font-weight-bold" id="inputGroup-sizing-default">Fee</span>
+        </div>
+        <input readonly type="text" style="text-align: right;"class="form-control" name="fee" value="<%= invoice.fee %>" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+    <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text font-weight-bold" id="inputGroup-sizing-default">Gas Cost</span>
+        </div>
+        <input readonly type="text" style="text-align: right;"class="form-control" name="cost_gas" value="<%= invoice.cost_gas %>" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text font-weight-bold" id="inputGroup-sizing-default">Tax</span>
+        </div>
+        <input readonly type="text" style="text-align: right;"class="form-control" name="tax" value="<%= invoice.tax %>" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text font-weight-bold" id="inputGroup-sizing-default">TotalCost</span>
+        </div>
+        <input readonly type="text"style="text-align: right;" class="form-control" name="total_cost" value="<%= invoice.total_cost %>" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>      
+  </br>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <button type="submit" class="btn btn-success">GO!</button>
+      </div>
+      <div class="input-group-prepend" style="right: 0px; position: absolute;">
+        <a onclick="history.back();" class="btn btn-success">Select Another</a>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+
+<%-  include ('layouts/footer.ejs') %>

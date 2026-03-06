@@ -1,8 +1,3 @@
-npm start 
-- to start app in terminal(Node.js required) -
-
-- Might have to edit password value for DB connection in app.js | line:14 -
-
 --- Mysql script to create adequate DB to initialize app ---
 
 CREATE SCHEMA `quickdb` ;
